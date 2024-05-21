@@ -137,7 +137,7 @@ a {
 
 /* Info */
 #info {
-    height: fit-content;
+    height: 50vh;
 }
 
 #info .info-cols {

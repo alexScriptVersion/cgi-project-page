@@ -41,3 +41,19 @@ $('.cf a').on('click', function (event) {
         );
     }
 });
+
+// Search bar
+const input = document.querySelector('input[type="search"]');
+
+input.addEventListener("search", () => {
+    console.log(`The term searched for was "${input.value}"`);
+    // Check if the project is there
+    // Get status of project
+});
+
+/*
+Other version to try if the addEventListener does not work:
+input.onsearch = () => {
+    console.log(`The term searched for was ${input.value}`);
+};
+*/

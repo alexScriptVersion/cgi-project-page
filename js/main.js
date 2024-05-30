@@ -49,6 +49,8 @@ input.addEventListener("search", () => {
     console.log(`The term searched for was "${input.value}"`);
     // Check if the project is there
     // Get status of project
+    // Create new status-section
+    // Display status in it
 });
 
 /*
@@ -57,3 +59,26 @@ input.onsearch = () => {
     console.log(`The term searched for was ${input.value}`);
 };
 */
+
+function addStatusSection(status) {
+    const newSection = document.createElement("section")
+    newSection.id = "status"
+    
+    const newDiv = document.createElement("div")
+    newDiv.className = "container"
+    
+    const newTitle = document.createElement("h3")
+    newTitle.innerText = `Projekt: ${input.value}`
+    
+    const newPara = document.createElement("p")
+    newPara.innerText = `Status: ${status}`
+    
+    newSection.appendChild(newDiv)
+    newDiv.appendChild(newTitle)
+    newDiv.appendChild(newPara)
+    
+    const showcase = document.querySelector("#showcase")
+    showcase.after(newSection)
+}
+
+//addStatusSection()

@@ -60,6 +60,8 @@ input.onsearch = () => {
 };
 */
 
+// Read CSV file to get data: https://www.naukri.com/code360/library/how-to-read-csv-file-in-javascript
+
 function addStatusSection(status) {
     const newSection = document.createElement("section")
     newSection.id = "status"

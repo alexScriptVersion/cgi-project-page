@@ -1,3 +1,5 @@
+// Imports
+
 // Responsive Nav
 $(function () {
     menu = $("nav ul");
@@ -60,8 +62,6 @@ input.onsearch = () => {
 };
 */
 
-// Read CSV file to get data: https://www.naukri.com/code360/library/how-to-read-csv-file-in-javascript
-
 function addStatusSection(status) {
     const newSection = document.createElement("section")
     newSection.id = "status"
@@ -84,3 +84,7 @@ function addStatusSection(status) {
 }
 
 //addStatusSection()
+
+// Read CSV file to get data: https://www.naukri.com/code360/library/how-to-read-csv-file-in-javascript
+
+// Or maybe I need to create an intermediate node.js script where i work with the data and then export it in an appropriate format to this file.

@@ -29,8 +29,14 @@ fs.readFile(path.resolve(__dirname, filePath), "utf8", (err, data) => {
   // Log the output array
   console.log(output[1]);
 
-  outputData = output;
+  assignData(output);
 
 })
 
+function assignData(data) {
+  outputData = data;
+  //console.log(outputData)
+  //export outputData;
+}
 
+// otherwise, try fs.readFileSync(filename, [encoding]). See https://stackoverflow.com/questions/10058814/get-data-from-fs-readfile.

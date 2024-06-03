@@ -1,5 +1,6 @@
 // Imports
 
+
 // Responsive Nav
 $(function () {
     menu = $("nav ul");

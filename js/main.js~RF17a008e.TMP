@@ -48,6 +48,25 @@ $('.cf a').on('click', function (event) {
     }
 });
 
+// Smooth Scrolling
+$('#status').on('click', function (event) {
+    if (this.hash !== '') {
+        event.preventDefault();
+
+        const hash = this.hash;
+
+        $('html, body').animate(
+            {
+                scrollTop: $(hash).offset().top
+            },
+            800,
+            function () {
+                window.location.hash = hash;
+            }
+        );
+    }
+});
+
 // Search bar
 const input = document.querySelector('input[type="search"]');
 

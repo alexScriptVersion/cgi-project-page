@@ -141,7 +141,7 @@ a {
 
 /* Info */
 #info {
-    height: fit-content;
+    height: 100vh;
 }
 
 #info .info-paragraph {
@@ -308,7 +308,15 @@ nav a#openup {
     display: none;
 }
 
+.no-hover {
+    pointer-events: none;
+}
+
 @media screen and (max-width: 580px) {
+    .hide-on-small {
+        display: none;
+    }
+
     .search {
         width: 250px;
     }

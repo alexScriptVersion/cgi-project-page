@@ -1,5 +1,21 @@
-// Imports
+// Data fetching (No error handling! Can fix later.)
+let jsonData;
 
+document.addEventListener('DOMContentLoaded', function() {
+    fetchData();
+    //alert("Data fetched!");
+}, false);
+
+function fetchData() {
+    fetch('https://jsonplaceholder.typicode.com/todos')
+    .then(response => response.json())
+    .then(data => {
+      jsonData = data;
+    })
+    .then(() => {
+      console.log(jsonData);
+    })
+}
 
 // Responsive Nav
 $(function () {
@@ -49,8 +65,17 @@ $('.cf a').on('click', function (event) {
 const input = document.querySelector('input[type="search"]');
 
 input.addEventListener("search", () => {
+    // remove the status section for previous project
+    if (document.getElementById("status") != null) {
+        removeStatusSection();
+    }
     console.log(`The term searched for was "${input.value}"`);
+    console.log(jsonData[input.value].completed);
+    if (jsonData[input.value].completed) {
+        addStatusSection()
+    }
     // Check if the project is there
+        // if object.dnr.includes(input.value):
     // Get status of project
     // Create new status-section
     // Display status in it
@@ -64,8 +89,8 @@ input.onsearch = () => {
 */
 
 function addStatusSection(status) {
-    const newSection = document.createElement("section")
-    newSection.id = "status"
+    const statusSection = document.createElement("section")
+    statusSection.id = "status"
     
     const newDiv = document.createElement("div")
     newDiv.className = "container"
@@ -76,12 +101,18 @@ function addStatusSection(status) {
     const newPara = document.createElement("p")
     newPara.innerText = `Status: ${status}`
     
-    newSection.appendChild(newDiv)
+    statusSection.appendChild(newDiv)
     newDiv.appendChild(newTitle)
     newDiv.appendChild(newPara)
     
     const showcase = document.querySelector("#showcase")
-    showcase.after(newSection)
+    showcase.after(statusSection)
+}
+
+function removeStatusSection() {
+    const statusSection = document.querySelector("#status")
+    statusSection.remove()
+
 }
 
 //addStatusSection()

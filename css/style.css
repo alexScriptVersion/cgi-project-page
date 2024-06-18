@@ -141,7 +141,7 @@ a {
 
 /* Info */
 #info {
-    height: 100vh;
+    height: fit-content;
 }
 
 #info .info-paragraph {

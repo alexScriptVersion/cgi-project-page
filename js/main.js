@@ -51,7 +51,47 @@ $('.cf a').on('click', function (event) {
 // Search bar
 const input = document.querySelector('input[type="search"]');
 
-input.addEventListener("search", () => {
+function removeStatusSection() {
+    const statusSection = document.querySelector("#status")
+    statusSection.remove()
+}
+
+function focusStatusSection() {
+    document.getElementById('status').scrollIntoView({
+        behavior: 'smooth',
+        block: "end"
+      });
+}
+
+function addStatusSection(status) {
+    const statusSection = document.createElement("section");
+    statusSection.id = "status";
+    
+    const newDiv = document.createElement("div");
+    newDiv.className = "container";
+    
+    const newTitle = document.createElement("h3")
+    newTitle.innerText = `Projekt: ${input.value}`;
+    
+    const newPara = document.createElement("p");
+    newPara.innerText = `Status: ${status}`;
+    
+    statusSection.appendChild(newDiv)
+    newDiv.appendChild(newTitle);
+    newDiv.appendChild(newPara);
+    
+    const showcase = document.querySelector("#showcase");
+    showcase.after(statusSection);
+
+    focusStatusSection();
+}
+
+input.addEventListener("keypress", function(event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+      // Cancel the default action, if needed
+      event.preventDefault();
+
     // remove the status section for previous project
     if (document.getElementById("status") != null) {
         removeStatusSection();
@@ -77,7 +117,37 @@ input.addEventListener("search", () => {
             //console.log("Project not found")
         }
     }
+    }
+  });
+
+  /*
+input.addEventListener("search", (event) => {
+
+
+    event.preventDefault();
+
+    // Check if the project is there
+    for (let key in listOfProjects) {
+        //console.log(typeof(input.value))
+        if (listOfProjects[key].dnr.includes(input.value)) {
+            // Get status of project, Create new status-section, Display status in it      
+            if (listOfProjects[key].subtask_fakturerad == 2) {
+                addStatusSection("fakturerad")
+            }
+            else if (listOfProjects[key].subtask_rapport == 2) {
+                addStatusSection("rapport")
+            }
+            else {
+                addStatusSection("diarienummer")
+            }
+            // console.log('PROJECT FOUND')
+            break
+        } else {
+            //console.log("Project not found")
+        }
+    }
 });
+*/
 
 /*
 Other version to try if the addEventListener does not work:
@@ -86,40 +156,9 @@ input.onsearch = () => {
 };
 */
 
-function focusStatusSection() {
-    document.getElementById('status').scrollIntoView({
-        behavior: 'smooth'
-      });
-}
 
-function addStatusSection(status) {
-    const statusSection = document.createElement("section")
-    statusSection.id = "status"
-    
-    const newDiv = document.createElement("div")
-    newDiv.className = "container"
-    
-    const newTitle = document.createElement("h3")
-    newTitle.innerText = `Projekt: ${input.value}`
-    
-    const newPara = document.createElement("p")
-    newPara.innerText = `Status: ${status}`
-    
-    statusSection.appendChild(newDiv)
-    newDiv.appendChild(newTitle)
-    newDiv.appendChild(newPara)
-    
-    const showcase = document.querySelector("#showcase")
-    showcase.after(statusSection)
 
-    focusStatusSection()
-}
 
-function removeStatusSection() {
-    const statusSection = document.querySelector("#status")
-    statusSection.remove()
-
-}
 
 //addStatusSection()
 

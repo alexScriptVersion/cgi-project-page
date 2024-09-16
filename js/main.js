@@ -59,7 +59,7 @@ input.addEventListener("search", () => {
 
     // Check if the project is there
     for (let key in listOfProjects) {
-        console.log(typeof(input.value))
+        //console.log(typeof(input.value))
         if (listOfProjects[key].dnr.includes(input.value)) {
             // Get status of project, Create new status-section, Display status in it      
             if (listOfProjects[key].subtask_fakturerad == 2) {
@@ -71,10 +71,10 @@ input.addEventListener("search", () => {
             else {
                 addStatusSection("diarienummer")
             }
-            console.log('PROJECT FOUND')
+            // console.log('PROJECT FOUND')
             break
         } else {
-            console.log("Project not found")
+            //console.log("Project not found")
         }
     }
 });
@@ -85,6 +85,12 @@ input.onsearch = () => {
     console.log(`The term searched for was ${input.value}`);
 };
 */
+
+function focusStatusSection() {
+    document.getElementById('status').scrollIntoView({
+        behavior: 'smooth'
+      });
+}
 
 function addStatusSection(status) {
     const statusSection = document.createElement("section")
@@ -105,6 +111,8 @@ function addStatusSection(status) {
     
     const showcase = document.querySelector("#showcase")
     showcase.after(statusSection)
+
+    focusStatusSection()
 }
 
 function removeStatusSection() {

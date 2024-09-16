@@ -109,7 +109,9 @@ a {
 #status {
     margin: 0;
     padding: 0;
+    padding-top: 46px;
     width: 100%;
+    min-height: 50vh;
     height: fit-content;
     position: relative;
     overflow-y: hidden;

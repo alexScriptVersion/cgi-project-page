@@ -89,13 +89,6 @@ function addStatusSection(dnr, status) {
     focusStatusSection();
 }
 
-// id 1 = Incoming
-// id 2 = To be started
-// id 176 = On going
-// id 134 = Lab-work done
-// id 177 = In analysis
-// id 3 = Finished projects
-// id 4 = Invoiced projects
 
 // Search for proejct event
 input.addEventListener("keypress", function (event) {
@@ -118,28 +111,42 @@ input.addEventListener("keypress", function (event) {
 
                 console.log(listOfProjects[key]);
                 
+                // id 1 = Incoming
+                // id 2 = To be started
+                // id 176 = On going
+                // id 134 = Lab-work done
+                // id 177 = In analysis
+                // id 3 = Finished projects
+                // id 4 = Invoiced projects
                 // check what column_id the projects has, then create an appropriate status section
                 switch (listOfProjects[key].column_id) {
                     case "1":
                         console.log("ID: 1");
+                        addStatusSection(fullDnr, "Incoming")
                         break;
                     case "2":
                         console.log("ID: 2");
+                        addStatusSection(fullDnr, "To be started")
                         break;
                     case "176":
                         console.log("ID: 176");
+                        addStatusSection(fullDnr, "On going")
                         break;
                     case "134":
                         console.log("ID: 134");
+                        addStatusSection(fullDnr, "Lab-work done")
                         break;
                     case "177":
                         console.log("ID: 177");
+                        addStatusSection(fullDnr, "In analysis")
                         break;
                     case "3":
                         console.log("ID: 3");
+                        addStatusSection(fullDnr, "Finished projects")
                         break;
                     case "4":
                         console.log("ID: 4");
+                        addStatusSection(fullDnr, "Invoiced projects")
                         break;
                     default:
                         console.log("ID not found???");

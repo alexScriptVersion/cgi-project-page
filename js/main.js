@@ -66,7 +66,7 @@ function focusStatusSection() {
 }
 
 // Add new status section
-function addStatusSection(dnr, status) {
+function addStatusSection(dnr, status, notFound = false) {
     const statusSection = document.createElement("section");
     statusSection.id = "status";
 
@@ -74,7 +74,12 @@ function addStatusSection(dnr, status) {
     newDiv.className = "container";
 
     const newTitle = document.createElement("h3")
-    newTitle.innerText = `Projekt: ${dnr}`;
+
+    if (notFound) {
+        newTitle.innerText = `Sökterm: "${dnr}" - Inget projekt hittades.`;
+    } else {
+        newTitle.innerText = `Projekt: ${dnr}`;
+    }
 
     const newPara = document.createElement("p");
     newPara.innerText = `Status: ${status}`;
@@ -105,9 +110,9 @@ input.addEventListener("keypress", function (event) {
         // Check if the project is there
         for (let key in listOfProjects) {
             //console.log(typeof(input.value))
-            if (listOfProjects[key].dnr.includes(input.value)) {
-                fullDnr = listOfProjects[key].dnr;
-                console.log(fullDnr);
+            if (listOfProjects[key].dnr == input.value) {
+                current_dnr = listOfProjects[key].dnr;
+                console.log(current_dnr);
 
                 console.log(listOfProjects[key]);
                 
@@ -122,31 +127,31 @@ input.addEventListener("keypress", function (event) {
                 switch (listOfProjects[key].column_id) {
                     case "1":
                         console.log("ID: 1");
-                        addStatusSection(fullDnr, "Incoming")
+                        addStatusSection(current_dnr, "Incoming")
                         break;
                     case "2":
                         console.log("ID: 2");
-                        addStatusSection(fullDnr, "To be started")
+                        addStatusSection(current_dnr, "To be started")
                         break;
                     case "176":
                         console.log("ID: 176");
-                        addStatusSection(fullDnr, "On going")
+                        addStatusSection(current_dnr, "On going")
                         break;
                     case "134":
                         console.log("ID: 134");
-                        addStatusSection(fullDnr, "Lab-work done")
+                        addStatusSection(current_dnr, "Lab-work done")
                         break;
                     case "177":
                         console.log("ID: 177");
-                        addStatusSection(fullDnr, "In analysis")
+                        addStatusSection(current_dnr, "In analysis")
                         break;
                     case "3":
                         console.log("ID: 3");
-                        addStatusSection(fullDnr, "Finished projects")
+                        addStatusSection(current_dnr, "Finished projects")
                         break;
                     case "4":
                         console.log("ID: 4");
-                        addStatusSection(fullDnr, "Invoiced projects")
+                        addStatusSection(current_dnr, "Invoiced projects")
                         break;
                     default:
                         console.log("ID not found???");
@@ -154,6 +159,7 @@ input.addEventListener("keypress", function (event) {
                 break;
             } else {
                 console.log("Project not found")
+                addStatusSection(input.value, "", true)
             }
         }
     }

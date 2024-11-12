@@ -4,6 +4,24 @@ const dataInJson = [{"dnr": "4.1-163-2022", "column_id": "177"}, {"dnr": "4.1-66
 const listOfProjects = JSON.parse(JSON.stringify(dataInJson))
 //console.log(listOfProjects)
 
+// Column ID's
+    // id 1 = Incoming --> NOT relevant since they need a dnr to search
+    // id 2 = To be started
+    // id 176 = On going
+    // id 134 = Lab-work done
+    // id 177 = In analysis
+    // id 3 = Finished projects
+    // id 4 = Invoiced projects
+
+const statuses = {
+    id2: "Vi har mottagit proverna, men inte börjat arbeta med dem.",
+    id176: "Vi har börjat arbeta med proverna i labbet. Se vårat arbetsflöde kring hur vi jobbar med prover i labbet längre ner på sidan.",
+    id134: "V är klara med proverna i labbet. Om sekvensering ingår i projektet så har proverna skickats till sekvenseringscenter.",
+    id177: "Vi har fått resultat från sekvensering och analyserar dessa.",
+    id13: "Projektet är klart.",
+    id4: "Projektet har fakturerats.",
+}
+
 // Responsive Nav
 $(function () {
     menu = $("nav ul");
@@ -82,7 +100,7 @@ function addStatusSection(dnr, status, notFound = false) {
     }
 
     const newPara = document.createElement("p");
-    newPara.innerText = `Status: ${status}`;
+    newPara.innerText = `${status}`;
 
     statusSection.appendChild(newDiv)
     newDiv.appendChild(newTitle);
@@ -116,42 +134,35 @@ input.addEventListener("keypress", function (event) {
 
                 console.log(listOfProjects[key]);
                 
-                // id 1 = Incoming
-                // id 2 = To be started
-                // id 176 = On going
-                // id 134 = Lab-work done
-                // id 177 = In analysis
-                // id 3 = Finished projects
-                // id 4 = Invoiced projects
                 // check what column_id the projects has, then create an appropriate status section
                 switch (listOfProjects[key].column_id) {
-                    case "1":
+                    /*case "1":
                         console.log("ID: 1");
                         addStatusSection(current_dnr, "Incoming")
-                        break;
+                        break;*/
                     case "2":
                         console.log("ID: 2");
-                        addStatusSection(current_dnr, "To be started")
+                        addStatusSection(current_dnr, statuses.id2)
                         break;
                     case "176":
                         console.log("ID: 176");
-                        addStatusSection(current_dnr, "On going")
+                        addStatusSection(current_dnr, statuses.id176)
                         break;
                     case "134":
                         console.log("ID: 134");
-                        addStatusSection(current_dnr, "Lab-work done")
+                        addStatusSection(current_dnr, statuses.id134)
                         break;
                     case "177":
                         console.log("ID: 177");
-                        addStatusSection(current_dnr, "In analysis")
+                        addStatusSection(current_dnr, statuses.id177)
                         break;
                     case "3":
                         console.log("ID: 3");
-                        addStatusSection(current_dnr, "Finished projects")
+                        addStatusSection(current_dnr, statuses.id3)
                         break;
                     case "4":
                         console.log("ID: 4");
-                        addStatusSection(current_dnr, "Invoiced projects")
+                        addStatusSection(current_dnr, statuses.id4)
                         break;
                     default:
                         console.log("ID not found???");

@@ -14,8 +14,9 @@ const listOfProjects = JSON.parse(JSON.stringify(dataInJson))
     // id 4 = Invoiced projects
 
 const statuses = {
+    id1: "Vi har mottagit proverna, men inte börjat arbeta med dem.",
     id2: "Vi har mottagit proverna, men inte börjat arbeta med dem.",
-    id176: "Vi har börjat arbeta med proverna i labbet. Se vårat arbetsflöde kring hur vi jobbar med prover i labbet längre ner på sidan.",
+    id176: "Vi har börjat arbeta med proverna i labbet.",
     id134: "V är klara med proverna i labbet. Om sekvensering ingår i projektet så har proverna skickats till sekvenseringscenter.",
     id177: "Vi har fått resultat från sekvensering och analyserar dessa.",
     id13: "Projektet är klart.",
@@ -136,10 +137,10 @@ input.addEventListener("keypress", function (event) {
                 
                 // check what column_id the projects has, then create an appropriate status section
                 switch (listOfProjects[key].column_id) {
-                    /*case "1":
+                    case "1":
                         console.log("ID: 1");
-                        addStatusSection(current_dnr, "Incoming")
-                        break;*/
+                        addStatusSection(current_dnr, statuses.id1)
+                        break;
                     case "2":
                         console.log("ID: 2");
                         addStatusSection(current_dnr, statuses.id2)
@@ -170,7 +171,7 @@ input.addEventListener("keypress", function (event) {
                 break;
             } else {
                 console.log("Project not found")
-                addStatusSection(input.value, "", true)
+                //addStatusSection(input.value, "", true)
             }
         }
     }

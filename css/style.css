@@ -107,6 +107,7 @@ a {
 
 /* Status section */
 #status {
+    
     margin: 0;
     padding: 0;
     padding-top: 46px;
@@ -118,6 +119,7 @@ a {
 }
 
 /* Arbetsflöde */
+/*
 #arbetsflode {
     background-color: #E8F7FF;
     margin: 0;
@@ -140,9 +142,11 @@ a {
 .arbetsflode-bild .vertikal {
     display: none;
 }
+*/
 
 /* Info */
 #info {
+    min-height: 50vh;
     height: fit-content;
 }
 

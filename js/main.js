@@ -18,7 +18,7 @@ const statuses = {
     id2: "Vi har mottagit proverna, men inte börjat arbeta med dem.",
     id176: "Vi har börjat arbeta med proverna i labbet.",
     id134: "V är klara med proverna i labbet. Om sekvensering ingår i projektet så har proverna skickats till sekvenseringscenter.",
-    id177: "Vi har fått resultat från sekvensering och analyserar dessa.",
+    id177: "Vi har fått resultat från sekvenseringen och analyserar dessa.",
     id13: "Projektet är klart.",
     id4: "Projektet har fakturerats.",
 }

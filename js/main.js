@@ -120,16 +120,19 @@ input.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         // Cancel the default action, if needed
         event.preventDefault();
-
+        
         // remove the status section for previous project
         if (document.getElementById("status") != null) {
             removeStatusSection();
         }
 
+        let dnrFound = false;
+
         // Check if the project is there
         for (let key in listOfProjects) {
             //console.log(typeof(input.value))
             if (listOfProjects[key].dnr == input.value) {
+                dnrFound = true;
                 current_dnr = listOfProjects[key].dnr;
                 console.log(current_dnr);
 
@@ -139,40 +142,44 @@ input.addEventListener("keypress", function (event) {
                 switch (listOfProjects[key].column_id) {
                     case "1":
                         console.log("ID: 1");
-                        addStatusSection(current_dnr, statuses.id1)
+                        addStatusSection(current_dnr, statuses.id1);
                         break;
                     case "2":
                         console.log("ID: 2");
-                        addStatusSection(current_dnr, statuses.id2)
+                        addStatusSection(current_dnr, statuses.id2);
                         break;
                     case "176":
                         console.log("ID: 176");
-                        addStatusSection(current_dnr, statuses.id176)
+                        addStatusSection(current_dnr, statuses.id176);
                         break;
                     case "134":
                         console.log("ID: 134");
-                        addStatusSection(current_dnr, statuses.id134)
+                        addStatusSection(current_dnr, statuses.id134);
                         break;
                     case "177":
                         console.log("ID: 177");
-                        addStatusSection(current_dnr, statuses.id177)
+                        addStatusSection(current_dnr, statuses.id177);
                         break;
                     case "3":
                         console.log("ID: 3");
-                        addStatusSection(current_dnr, statuses.id3)
+                        addStatusSection(current_dnr, statuses.id3);
                         break;
                     case "4":
                         console.log("ID: 4");
-                        addStatusSection(current_dnr, statuses.id4)
+                        addStatusSection(current_dnr, statuses.id4);
                         break;
                     default:
                         console.log("ID not found???");
+                        addStatusSection(current_dnr, "Status okänd.");
                 }
                 break;
             } else {
                 console.log("Project not found")
                 //addStatusSection(input.value, "", true)
             }
+        }
+        if (!dnrFound) {
+            addStatusSection(input.value, "", true)
         }
     }
 });

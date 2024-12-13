@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b5d4c93620.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>CGI kundportal</title>
+</head>
+
+<body>
+    <!-- Showcase & Nav -->
+    <div id="showcase">
+        <header>
+            <nav class='cf'>
+                <ul class='cf'>
+                    <li class="hide-on-small no-hover">
+                        <a href="#showcase">CGI</a>
+                    </li>
+                    <li>
+                        <a href='#showcase'>Projekt</a>
+                    </li>
+                    <li>
+                        <a href='#arbetsflode'>Arbetsflöde</a>
+                    </li>
+                    <li>
+                        <a href='#info'>Info</a>
+                    </li>
+                </ul>
+                <a href='#' id='openup'>CGI</a>
+            </nav>
+        </header>
+
+        <!-- Search -->
+        <div class="section-main container">
+            <h1>Sök projekt.</h1>
+            <form class="search-container" action="#">
+                <div class="search">
+                    <span class="search-icon material-symbols-outlined">search</span>
+                    <input class="search-input" type="search" placeholder="t.ex. 123-2024">
+                </div>
+            </form>
+            <p>Välkommen till Centrum för genetisk identifierings (CGI) kundportal.<br>Skriv in projektets diarienummer
+                i
+                sökrutan för att se vilken status proverna har i vårat arbetsflöde.</p>
+        </div>
+    </div>
+
+    <!-- Arbetsflöde section -->
+    <!-- 
+    <section id="arbetsflode" class="section bg-light">
+        <div class="container">
+            <h3>Vårat arbetsflöde</h3>
+            <div class="arbetsflode-bild">
+                <img class="horisontal" src="img/arbetsflode-horisontal.jpg" alt="">
+                <img class="vertikal" src="img/arbetsflode-vertikal.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    -->
+    <!-- Info section -->
+    <section id="info" class="section bg-dark">
+        <div class="container">
+            <h3>Ytterligare information och kontakt</h3>
+            <p class="info-paragraph">Mer information om hur DNA används inom miljöövervakning finns att läsa på <a
+                    href="https://www.nrm.se/forskning/forskningsinfrastruktur/centrum-for-genetisk-identifiering-cgi/miljoovervakarens-dna-skola"
+                    target="_blank"><i>Miljöövervakarens DNA skola<i class="fa fa-external-link"></i></i></a> på Naturhistoriska Riksmuseets hemsida. För
+                kontaktuppgifter till CGI och projektansvarig, se <a
+                    href="https://www.nrm.se/forskning/forskningsinfrastruktur/centrum-for-genetisk-identifiering-cgi/information-och-kontakt"
+                    target="_blank"><i>Information och kontakt<i class="fa fa-external-link"></i></i></a>.</p>
+            
+                    <p class="info-paragraph second">Nedan finns länkar till mer specifik information.</p>
+            <div class="info-cols">
+                <ul>
+                    <li>DNA</li>
+                    <li>
+                        <a href="https://sv.wikipedia.org/wiki/DNA" target="_blank">Grunder</a>
+                    </li>
+                    <li>
+                        <a href="https://sv.wikipedia.org/wiki/Gen" target="_blank">Gen</a>
+                    </li>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Environmental_DNA" target="_blank">eDNA</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>DNA streckkodning</li>
+                    <li>
+                        <a href="https://www.diva-portal.org/smash/get/diva2:767971/FULLTEXT01.pdf"
+                            target="_blank">Övergripande</a>
+                    </li>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/DNA_barcoding" target="_blank">En
+                            art - DNA barcoding</a>
+                    </li>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Metabarcoding" target="_blank">Flera arter - DNA
+                            metabarcoding</a>
+                    </li>
+                    <li>
+                        <a href="https://ibol.org/about/dna-barcoding/" target="_blank">International Barcode of Life
+                        </a>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>Metoder</li>
+                    <li>
+                        <a href="https://www.genteknik.se/genetik-och-genteknik/genmodifierade-organismer-gmo/tekniker/pcr/"
+                            target="_blank">PCR</a>
+                    </li>
+                    <li>
+                        <a href="https://www.genteknik.se/genetik-och-genteknik/genmodifierade-organismer-gmo/tekniker/sekvensering-2/"
+                            target="_blank">DNA sekvensering</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <ul>
+                <li>
+                    Tillskrivningar
+                </li>
+                <li>
+                    Copyright &copy; 2024 CGI
+                </li>
+                <li>
+                    <span>Grafisk formgivare: <a href="https://www.haidarwalid.com/" target="_blank">Haidar
+                            Walid <i class="fa fa-external-link"></i></a></span>
+                </li>
+            </ul>
+
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
